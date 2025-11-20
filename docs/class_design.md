@@ -5,7 +5,6 @@ INST326: Object-Oriented Programming
 
 This document describes the object-oriented architecture used to implement the Health Misinformation Analyzer. The system converts the procedural functions from Project 1 into well-structured classes that encapsulate data and behaviors.
 
----
 
 ## System Overview
 
@@ -19,7 +18,6 @@ The system consists of the following core classes:
 
 These classes work together to clean text, extract claims and citations, compare claims to medical terminology, score misinformation risk, and generate structured analysis reports.
 
----
 
 ## Class Descriptions
 
@@ -44,7 +42,6 @@ Represents a single article and handles all text processing tasks.
 **Collaborations:**  
 Uses functions from `misinfo_library.py` for cleaning, claim extraction, citation extraction, and domain parsing.
 
----
 
 ### 2. Glossary
 **Purpose:**  
@@ -61,7 +58,6 @@ Stores trusted medical terminology and checks article claims against expected ph
 **Collaborations:**  
 Used by `Analyzer` during article evaluation.
 
----
 
 ### 3. RiskScorer
 **Purpose:**  
@@ -83,7 +79,6 @@ Calculates the misinformation risk score for a single article.
 **Collaborations:**  
 Called by `Analyzer` after glossary comparison.
 
----
 
 ### 4. AnalysisReport
 **Purpose:**  
@@ -104,7 +99,6 @@ Stores and summarizes the results of a single article analysis.
 **Collaborations:**  
 Outputs results used by the user or by `Analyzer`.
 
----
 
 ### 5. Analyzer
 **Purpose:**  
@@ -124,6 +118,5 @@ Coordinates the entire end-to-end analysis pipeline and aggregates results acros
 **Collaborations:**  
 Interacts with all other classes.
 
----
 
 ## Interaction Flow
