@@ -15,6 +15,10 @@ from .misinfo_library import (
     export_flagged_claims,
     summarize_trends,
     cli_search_and_highlight,
+    csv_report,
+    json_report,
+    html_report,
+    analyzer,
 )
 
 __all__ = [

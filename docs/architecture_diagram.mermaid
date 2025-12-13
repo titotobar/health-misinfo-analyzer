@@ -1,0 +1,106 @@
+classDiagram
+    %% Abstract Base Class
+    class BaseReport {
+        <<abstract>>
+        #_article: Article
+        #_score: dict
+        #_mismatches: list
+        #_citations: list
+        #_evidence_map: dict
+        +score: dict
+        +mismatches: list
+        +citations: list
+        +evidence_map: dict
+        +export(path: str)* str
+        +summary() dict
+        +get_risk_level() str
+    }
+    
+    %% Concrete Implementations
+    class CSVReport {
+        +export(path: str) str
+        +summary() dict
+    }
+    
+    class JSONReport {
+        +export(path: str) str
+        +summary() dict
+    }
+    
+    class HTMLReport {
+        +export(path: str) str
+        +summary() dict
+        -_generate_claim_html() str
+        -_generate_citation_html() str
+        -_generate_mismatch_html() str
+    }
+    
+    %% Supporting Classes
+    class Analyzer {
+        -_articles: list
+        -_glossary: Glossary
+        -_reports: list
+        -_report_class: type
+        +glossary: Glossary
+        +reports: list
+        +set_report_format(report_class)
+        +add_article(text, url) Article
+        +analyze_article(article) BaseReport
+        +summarize_trends() dict
+    }
+    
+    class Article {
+        -_text: str
+        -_clean_text: str
+        -_domain: str
+        -_claims: list
+        -_citations: list
+        +text: str
+        +clean_text: str
+        +claims: list
+        +citations: list
+        +domain: str
+        +clean()
+        +extract_domain(url)
+        +extract_claims(min_len)
+        +extract_citations()
+    }
+    
+    class Glossary {
+        -_glossary: dict
+        +terms: dict
+        +add_term(term, phrases)
+        +remove_term(term)
+        +compare(text) list
+    }
+    
+    class RiskScorer {
+        -_claims: list
+        -_citations: list
+        -_mismatches: list
+        -_score: dict
+        +score: dict
+        +risk_level: str
+        +calculate()
+    }
+    
+    %% Relationships
+    BaseReport <|-- CSVReport : inherits
+    BaseReport <|-- JSONReport : inherits
+    BaseReport <|-- HTMLReport : inherits
+    
+    Analyzer --> BaseReport : creates
+    Analyzer --> Article : manages
+    Analyzer --> Glossary : uses
+    Analyzer --> RiskScorer : uses
+    
+    BaseReport --> Article : analyzes
+    RiskScorer --> Article : scores
+    Glossary --> Article : compares
+    
+    %% Notes
+    note for BaseReport "Abstract base class\nDefines interface for\nall report types"
+    note for Analyzer "Uses dependency injection\nfor report strategy"
+    note for CSVReport "Original format\nBackward compatible"
+    note for JSONReport "Structured data\nMachine readable"
+    note for HTMLReport "Visual presentation\nBrowser viewable"
