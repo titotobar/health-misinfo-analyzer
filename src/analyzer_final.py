@@ -6,7 +6,7 @@ High-level orchestrator with pluggable report formats.
 from src.article import Article
 from src.glossary import Glossary
 from src.risk_scorer import RiskScorer
-from src.csv_report import CSVReport
+from src.csv_report_final import CSVReport
 
 
 class Analyzer:
