@@ -1,5 +1,4 @@
 """
-test_oop_principles.py
 
 Comprehensive tests for OOP principles: Inheritance, Polymorphism, and Composition.
 Tests verify the proper implementation of object-oriented design patterns.
