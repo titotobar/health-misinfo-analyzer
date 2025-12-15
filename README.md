@@ -1,4 +1,4 @@
-# Health Misinformation Analyzer – Project 2 (OOP)
+# Health Misinformation Analyzer – Project 4
 
 This project transforms our Project 1 function library into a fully object-oriented system designed to analyze health-related articles for misinformation.  
 Our system uses multiple interacting classes to detect claims, compare them to a trusted glossary, score misinformation risk, and generate analysis reports.
@@ -77,5 +77,6 @@ Follow these steps to run the analyzer on your machine.
 ```bash
 git clone https://github.com/titotobar/health-misinfo-analyzer.git
 cd health-misinfo-analyzer
+
 
 
