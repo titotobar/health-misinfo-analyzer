@@ -1,7 +1,8 @@
-# Health Misinformation Analyzer – Project 4
+# Health Misinformation Analyzer – Project 4 (Integration and testing)
+This capstone project integrates object-oriented design, data persistence, and comprehensive testing into a complete, end-to-end Information Science application.
 
-This project transforms our Project 1 function library into a fully object-oriented system designed to analyze health-related articles for misinformation.  
-Our system uses multiple interacting classes to detect claims, compare them to a trusted glossary, score misinformation risk, and generate analysis reports.
+
+This project represents the final capstone for INST 326. It integrates our earlier object-oriented system with persistent data storage, import/export functionality, and a comprehensive testing suite to deliver a complete, professional-grade application.Our system uses multiple interacting classes to detect claims, compare them to a trusted glossary, score misinformation risk, and generate analysis reports.
 
 
 ### Team Members
@@ -24,7 +25,40 @@ This project converts the Project 1 function library into "5 fully functional cl
 - Glossary – stores trusted medical terms and finds mismatches  
 - RiskScorer – scores articles based on clickbait, absolute language, missing evidence, and mismatches  
 - AnalysisReport – produces structured summaries for each article  
-- Analyzer – runs multiple articles and generates overall trends  
+- Analyzer – runs multiple articles and generates overall trends
+
+
+
+
+Charter Questions This System Answers
+
+This system was designed to answer the following domain questions:
+
+- How can health-related articles be automatically analyzed for potential misinformation?
+- How can claims be evaluated against trusted medical terminology and evidence?
+- How can misinformation risk be summarized in a way that supports user decision-making?
+
+The analyzer processes one or more articles and produces structured, interpretable results that directly address these questions.
+
+
+Complete System Workflow
+
+1. The user provides article text or imports article data.
+2. Each article is cleaned and processed into structured claims and citations.
+3. Claims are compared against a trusted medical glossary.
+4. A risk score is calculated based on linguistic and evidentiary factors.
+5. Analysis reports are generated in multiple formats.
+6. Results can be saved, loaded, imported, or exported between sessions.
+
+Testing Strategy
+
+The project includes:
+- Unit tests for individual classes and methods
+- Integration tests to verify component interaction
+- System tests that validate complete end-to-end workflows
+
+Testing emphasizes correctness, persistence reliability, and error handling.
+All tests can be run using Python's unittest framework.
 
 # System Architecture
 
@@ -77,6 +111,11 @@ Follow these steps to run the analyzer on your machine.
 ```bash
 git clone https://github.com/titotobar/health-misinfo-analyzer.git
 cd health-misinfo-analyzer
+
+
+
+
+
 
 
 
