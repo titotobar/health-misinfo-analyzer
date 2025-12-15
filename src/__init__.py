@@ -1,4 +1,6 @@
 # src/__init__.py
+
+# Import functions from misinfo_library
 from .misinfo_library import (
     normalize_whitespace,
     validate_nonempty_str,
@@ -15,13 +17,20 @@ from .misinfo_library import (
     export_flagged_claims,
     summarize_trends,
     cli_search_and_highlight,
-    csv_report,
-    json_report,
-    html_report,
-    analyzer,
 )
 
+# Import class modules (these are separate files, not from misinfo_library!)
+from .article import Article
+from .glossary import Glossary
+from .risk_scorer import RiskScorer
+from .base_report import BaseReport
+from .csv_report import CSVReport
+from .json_report import JSONReport
+from .html_report import HTMLReport
+from .analyzer import Analyzer
+
 __all__ = [
+    # Functions from misinfo_library
     "normalize_whitespace",
     "validate_nonempty_str",
     "parse_iso_date_safe",
@@ -37,6 +46,15 @@ __all__ = [
     "export_flagged_claims",
     "summarize_trends",
     "cli_search_and_highlight",
+    # Classes
+    "Article",
+    "Glossary",
+    "RiskScorer",
+    "BaseReport",
+    "CSVReport",
+    "JSONReport",
+    "HTMLReport",
+    "Analyzer",
 ]
 
 __version__ = "0.1.0"
