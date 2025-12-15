@@ -106,6 +106,7 @@ BaseReport (Report Container)
 
 
 VIDEO LINK -----> https://youtu.be/uzq6xgn2E5Q?si=dH_8ZvZ9G6sKcIps
+(VIDEO STARTS AT 0:41)
 
 
 
@@ -117,6 +118,7 @@ Follow these steps to run the analyzer on your machine.
 ```bash
 git clone https://github.com/titotobar/health-misinfo-analyzer.git
 cd health-misinfo-analyzer
+
 
 
 
